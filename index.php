@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Rinéma</title>
+        <title>Cinéma</title>
 
         <link rel='stylesheet' type='text/css' href="./vues/bootstrap/css/bootstrap.min.css">
         <link rel='stylesheet' type='text/css' href="./vues/bootstrap/css/fileInput/fileinput.min.css">
