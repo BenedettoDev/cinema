@@ -1,0 +1,22 @@
+- Erreurs forms
+    # ajout film
+    - editer film
+    # authentification
+    - inscription
+- FILTRES
+    # ajout film
+    - editer film
+    # authentification
+    # inscription
+- Verifier sécurité
+- Changer le controlleur
+- bootstrap
+    - FileUpload
+        - check autre format (EDIT + ADD) 
+        # suppression image lors d'un update) 
+    # Date time     (http://tarruda.github.io/bootstrap-datetimepicker/)
+    - Typehead      (http://twitter.github.io/typeahead.js/)
+    # Star-rating   (http://plugins.krajee.com/star-rating-demo-basic-usage) 
+# Editer 1 film 
+# cardThumb
+# COOKIES
