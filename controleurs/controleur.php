@@ -9,83 +9,90 @@ include('modeles/modele_films.php');
 include('modeles/modele_utilisateurs.php');
 
 // CONTROLE DU CHOIX D'AFFICHAGE DE PAGE ET D'ACTION A EFFECTUER
-$choix = (isset($_GET['page'])) ? $_GET['page'] : 'accueil';
+//$choix = (isset($_GET['page'])) ? $_GET['page'] : 'accueil';
 
 // UTILISATEUR AUTHENTIFIE
 include('vues/layout/vue_menu.php');
-if (!isset($_SESSION['mail'])) {
-    switch ($choix) {
-        case 'accueil' :
-            include('vues/vue_accueil.php');
-            break;
-        case 'film':
-            include ('vues/vue_film.php');
-            break;
-        case 'films' :
-            include('vues/vue_films.php');
-            break;
-        case 'top_films' :
-            include('vues/vue_top_films.php');
-            break;
-        case 'authentifier' :
-            include('vues/vue_authentifier.php');
-            break;
-        case 'action_authentification' :
-            gerer_authentification();
-            break;
-        case 'inscrire' :
-            include('vues/vue_ajout_utilisateur.php');
-            break;
-        case 'action_ajout_utilisateur':
-            gerer_inscription();
-            break;
-        default:
-            include('vues/vue_accueil.php');
-            break;
-    }
+$pages_visiteurs = array ('accueil','film','top_films','authentifier');
+if (isset($_GET['page']) && in_array($_GET['page'], $pages_visiteurs)){
+    require 'vues/vue_'.$_GET['page'].'.php';
 } else {
-    switch ($choix) {
-        case 'accueil' :
-            include('vues/vue_accueil.php');
-            break;
-        case 'film':
-            include ('vues/vue_film.php');
-            break;
-        case 'editer_film':
-            edition_film();
-            break;
-        case 'action_edit_film':
-            gerer_edit_film();
-            break;
-        case 'films' :
-            include('vues/vue_films.php');
-            break;
-        case 'top_films' :
-            include('vues/vue_top_films.php');
-            break;
-        case 'authentifier' :
-            include('vues/vue_authentifier.php');
-            break;
-        case 'action_authentification' :
-            gerer_authentification();
-            break;
-        case 'ajout_film' :
-            include('vues/vue_ajout_film.php');
-            break;
-        case 'action_ajout_film' :
-            gerer_ajout_film();
-            break;
-        case 'action_suppression_film':
-            gerer_suppression_film();
-            break;
-        case 'deconnexion' :
-            gerer_deconnexion();
-            break;
-        default:
-            include('vues/vue_authentifier.php');
-            break;
-    }
+    require 'vues/vue_accueil.php';
 }
+
+//if (!isset($_SESSION['mail'])) {
+//    switch ($choix) {
+//        case 'accueil' :
+//            include('vues/vue_accueil.php');
+//            break;
+//        case 'film':
+//            include ('vues/vue_film.php');
+//            break;
+//        case 'films' :
+//            include('vues/vue_films.php');
+//            break;
+//        case 'top_films' :
+//            include('vues/vue_top_films.php');
+//            break;
+//        case 'authentifier' :
+//            include('vues/vue_authentifier.php');
+//            break;
+//        case 'action_authentification' :
+//            gerer_authentification();
+//            break;
+//        case 'inscrire' :
+//            include('vues/vue_ajout_utilisateur.php');
+//            break;
+//        case 'action_ajout_utilisateur':
+//            gerer_inscription();
+//            break;
+//        default:
+//            include('vues/vue_accueil.php');
+//            break;
+//    }
+//} else {
+//    switch ($choix) {
+//        case 'accueil' :
+//            include('vues/vue_accueil.php');
+//            break;
+//        case 'film':
+//            include ('vues/vue_film.php');
+//            break;
+//        case 'editer_film':
+//            edition_film();
+//            break;
+//        case 'action_edit_film':
+//            gerer_edit_film();
+//            break;
+//        case 'films' :
+//            include('vues/vue_films.php');
+//            break;
+//        case 'top_films' :
+//            include('vues/vue_top_films.php');
+//            break;
+//        case 'authentifier' :
+//            include('vues/vue_authentifier.php');
+//            break;
+//        case 'action_authentification' :
+//            gerer_authentification();
+//            break;
+//        case 'ajout_film' :
+//            include('vues/vue_ajout_film.php');
+//            break;
+//        case 'action_ajout_film' :
+//            gerer_ajout_film();
+//            break;
+//        case 'action_suppression_film':
+//            gerer_suppression_film();
+//            break;
+//        case 'deconnexion' :
+//            gerer_deconnexion();
+//            break;
+//        default:
+//            include('vues/vue_authentifier.php');
+//            break;
+//    }
+//}
 
 include('vues/layout/vue_footer.php');
 
