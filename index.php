@@ -2,13 +2,12 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Rinéma</title>
+        <title>Cinéma</title>
 
         <link rel='stylesheet' type='text/css' href="./vues/bootstrap/css/bootstrap.min.css">
         <link rel='stylesheet' type='text/css' href="./vues/bootstrap/css/fileInput/fileinput.min.css">
         <link rel='stylesheet' type='text/css' href="./vues/bootstrap/css/dateTime/bootstrap-datetimepicker.min.css">
         <link rel="stylesheet" type="text/css" href="./vues/bootstrap/css/star-rating/star-rating.css" media="all" />
-        <link type="text/css" rel="stylesheet" href="vues/css/style.css"/>
      
         <script type=text/javascript src="./vues/js/jQuery/jquery-1.12.3.min.js"></script>
         <script type=text/javascript src="./vues/bootstrap/js/moment/moment.min.js"></script>

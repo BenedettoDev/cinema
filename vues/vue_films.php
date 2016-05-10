@@ -71,7 +71,7 @@
                             <a href="index.php?page=film&id=<?= $lefilm['id']; ?>" class="btn btn-primary" role="button">Voir la suite</a> 
                             <?php if (isset($_SESSION['mail'])): ?>
                                 <a href="index.php?page=editer_film&id_film=<?= $lefilm['id']; ?>" class="btn btn-default" role="button">Editer</a>
-                                <a href="index.php?page=action_suppression_film&id_film=<?= $lefilm['id']; ?>" class="btn btn-default" role="button">Supprimer</a>
+                                <a href="index.php?action=action_suppression_film&id_film=<?= $lefilm['id']; ?>" class="btn btn-default" role="button">Supprimer</a>
                             <?php endif; ?>
                         </p>
                     </div>

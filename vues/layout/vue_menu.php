@@ -23,7 +23,8 @@
                  <li class='<?= (!empty($_GET['page']))&&($_GET['page']=='inscrire')?'active':'';?>'><a href="?page=inscrire"><span class="glyphicon glyphicon-pencil"></span>&nbsp;S'inscrire</a></li>
                  <li class='<?= (!empty($_GET['page']))&&($_GET['page']=='authentifier')?'active':'';?>'><a href="?page=authentifier"><span class="glyphicon glyphicon-log-in"></span>&nbsp;S'authentifier</a></li>
                 <?php else : ?>
-                <li><a href="?page=deconnexion"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Déconnexion ( <?= $_SESSION['mail'];?> )</a></li>
+                 
+                <li><a href="?action=deconnexion"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Déconnexion ( <?= $_SESSION['mail'];?> )</a></li>
                 <?php endif; ?>
             </ul>
         </div>
