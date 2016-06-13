@@ -1,8 +1,6 @@
 <?php
 
-define('USER', 'ipdw');
-define('PASSWORD', 'ISFCE2016');
-define('DSN', 'mysql:host=localhost;dbname=cinema;charset=UTF8');
+
 
 
 global $msg_erreur;
