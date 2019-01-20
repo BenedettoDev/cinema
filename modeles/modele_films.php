@@ -135,11 +135,11 @@ function editerUnFilm($film) {
     // mettre à jour là clé
     if (empty($nom_nouvelle_cle)) {
         $nom_nouvelle_cle = $nom_acienne_cle;
-    } else {
         $nom_nouvelle_jacket_format = $nom_ancienne_jacket;
+    } else {
 
         $nom_nouvelle_jacket_format = "IMG_$id" . md5($nom_nouvelle_cle) . ".jpeg";
-   
+
 
         if (strcmp($nom_nouvelle_jacket_format, $nom_ancienne_jacket) <> 0) {
 
@@ -166,8 +166,8 @@ function editerUnFilm($film) {
                 exit("problème img_thumbnail");
             }
             // On efface les anciennes images afin d'optimiser l'espace mémoire.
-            unlink ( $content_dir.$nom_ancienne_jacket);    
-            unlink ( $content_dir.'img_thumb/'.$nom_ancienne_jacket);    
+            unlink($content_dir . $nom_ancienne_jacket);
+            unlink($content_dir . 'img_thumb/' . $nom_ancienne_jacket);
         }
     }
 
@@ -190,11 +190,19 @@ function editerUnFilm($film) {
 
 function supprimer_film($idFilm) {
     global $dbh;
+    //Utilisé pour récupérer le nom exacte de l'image
+    $film = getFilmById($idFilm);
+
     $sql = 'DELETE FROM films WHERE id=:id_film';
     $sth = $dbh->prepare($sql);
 
     $sth->bindvalue(':id_film', $idFilm);
     $sth->execute();
+
+    // On efface les anciennes images afin d'optimiser l'espace mémoire.
+    $content_dir = './vues/images/films_jackets/'; // dossier où sera déplacé le fichie
+    unlink($content_dir . $film[0]['jacket']);
+    unlink($content_dir . 'img_thumb/' . $film[0]['jacket']);
 }
 
 function generateRandomString($length = 10) {

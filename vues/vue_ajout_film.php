@@ -2,7 +2,7 @@
 <div class="container">
     <h1>Ajout d'un film</h1>
 
-    <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="?page=action_ajout_film">
+    <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="?action=action_ajout_film">
         <div class="form-group  has-feedback <?= (empty($msg_erreur)) ? '' : ((!empty($msg_erreur['titre'])) ? 'has-error' : 'has-success'); ?>">
             <label class="control-label col-sm-2" for="name">Titre  </label>
             <div class="col-sm-10">

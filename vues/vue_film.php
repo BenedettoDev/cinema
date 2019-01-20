@@ -1,6 +1,4 @@
-<?php
-$lefilm = getFilmById($_GET['id']);
-?>
+<?php $lefilm = getFilmById($_GET['id']); ?>
 <div class='container'>
     <div class="col-xs-12 col-md-6">
 

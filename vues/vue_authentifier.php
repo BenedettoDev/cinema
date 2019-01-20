@@ -2,7 +2,7 @@
 <div class="container">
     <h1>Authentification</h1>
 
-    <form class="form-horizontal" role="form" method="post" action="?page=action_authentification">
+    <form class="form-horizontal" role="form" method="post" action="?action=action_authentification">
         <?php if (!empty($msg_erreur['not_found'])): ?>
             <div class="alert alert-danger" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
